@@ -23,18 +23,18 @@
 ## string-pad-start-x
 Pads a string with another string (repeated, if needed).
 
-**Version**: 1.0.0  
+**Version**: 1.0.1  
 **Author**: Xotic750 <Xotic750@gmail.com>  
 **License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
 **Copyright**: Xotic750  
 <a name="exp_module_string-pad-start-x--module.exports"></a>
 
-### `module.exports` ⇒ <code>string</code> ⏏
+### `module.exports(string, targetLength, [padString])` ⇒ <code>string</code> ⏏
 This method pads the current string with another string (repeated, if needed)
 so that the resulting string reaches the given length. The padding is applied
 from the start (left) of the current string.
 
-**Kind**: Exported member  
+**Kind**: Exported function  
 **Returns**: <code>string</code> - A String of the specified length with the pad string
  applied from the start.  
 **Throws**:
