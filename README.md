@@ -23,7 +23,7 @@
 ## string-pad-start-x
 Pads a string with another string (repeated, if needed).
 
-**Version**: 1.0.1  
+**Version**: 1.1.0  
 **Author**: Xotic750 <Xotic750@gmail.com>  
 **License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
 **Copyright**: Xotic750  
