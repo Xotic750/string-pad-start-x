@@ -1,6 +1,6 @@
 /**
  * @file Pads a string with another string (repeated, if needed).
- * @version 1.1.0
+ * @version 1.2.0
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
@@ -11,7 +11,7 @@
 
 var requireObjectCoercible = require('require-object-coercible-x');
 var toStr = require('to-string-x');
-var toLength = require('to-length-x');
+var toLength = require('to-length-x').toLength2018;
 var isUndefined = require('validate.io-undefined');
 var strSlice = String.prototype.slice;
 
@@ -50,6 +50,7 @@ module.exports = function padStart(string, targetLength) {
   if (filler === '') {
     filler = ' ';
   }
+
   var intMaxLength = toLength(targetLength);
   if (intMaxLength <= stringLength) {
     return str;
@@ -63,5 +64,6 @@ module.exports = function padStart(string, targetLength) {
   }
 
   var truncatedStringFiller = filler.length > fillLen ? strSlice.call(filler, 0, fillLen) : filler;
+
   return truncatedStringFiller + str;
 };

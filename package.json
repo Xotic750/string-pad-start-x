@@ -1,6 +1,6 @@
 {
   "name": "string-pad-start-x",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Pads a string with another string (repeated, if needed).",
   "homepage": "https://github.com/Xotic750/string-pad-start-x",
   "author": {
@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "require-object-coercible-x": "^1.4.1",
-    "to-length-x": "^2.1.0",
-    "to-string-x": "^1.4.1",
+    "to-length-x": "^3.0.0",
+    "to-string-x": "^1.4.2",
     "validate.io-undefined": "^1.0.3"
   },
   "devDependencies": {
