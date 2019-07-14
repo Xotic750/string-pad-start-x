@@ -7,13 +7,12 @@
  * @module string-pad-start-x
  */
 
-'use strict';
+const requireObjectCoercible = require('require-object-coercible-x');
+const toStr = require('to-string-x');
+const toLength = require('to-length-x').toLength2018;
+const isUndefined = require('validate.io-undefined');
 
-var requireObjectCoercible = require('require-object-coercible-x');
-var toStr = require('to-string-x');
-var toLength = require('to-length-x').toLength2018;
-var isUndefined = require('validate.io-undefined');
-var strSlice = String.prototype.slice;
+const strSlice = String.prototype.slice;
 
 /**
  * This method pads the current string with another string (repeated, if needed)
@@ -39,31 +38,34 @@ var strSlice = String.prototype.slice;
  * padStart('a', 2, 'bc'); // 'ba'
  */
 module.exports = function padStart(string, targetLength) {
-  var str = toStr(requireObjectCoercible(string));
-  var stringLength = toLength(str.length);
-  var fillString;
+  const str = toStr(requireObjectCoercible(string));
+  const stringLength = toLength(str.length);
+  let fillString;
+
   if (arguments.length > 2) {
     fillString = arguments[2];
   }
 
-  var filler = isUndefined(fillString) ? '' : toStr(fillString);
+  let filler = isUndefined(fillString) ? '' : toStr(fillString);
+
   if (filler === '') {
     filler = ' ';
   }
 
-  var intMaxLength = toLength(targetLength);
+  const intMaxLength = toLength(targetLength);
+
   if (intMaxLength <= stringLength) {
     return str;
   }
 
-  var fillLen = intMaxLength - stringLength;
+  const fillLen = intMaxLength - stringLength;
   while (filler.length < fillLen) {
-    var fLen = filler.length;
-    var remainingCodeUnits = fillLen - fLen;
+    const fLen = filler.length;
+    const remainingCodeUnits = fillLen - fLen;
     filler += fLen > remainingCodeUnits ? strSlice.call(filler, 0, remainingCodeUnits) : filler;
   }
 
-  var truncatedStringFiller = filler.length > fillLen ? strSlice.call(filler, 0, fillLen) : filler;
+  const truncatedStringFiller = filler.length > fillLen ? strSlice.call(filler, 0, fillLen) : filler;
 
   return truncatedStringFiller + str;
 };
