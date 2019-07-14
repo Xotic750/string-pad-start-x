@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "require-object-coercible-x": "^2.0.5",
-    "to-length-x": "^3.0.0",
+    "to-length-x": "^4.0.1",
     "to-string-x": "^2.0.15",
     "validate.io-undefined": "^1.0.3"
   },
