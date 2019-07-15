@@ -1,13 +1,11 @@
 import requireObjectCoercible from 'require-object-coercible-x';
 import toStr from 'to-string-x';
 import toLength from 'to-length-x';
-
-const EMPTY_STRING = '';
-const {slice} = EMPTY_STRING;
-const SPACE = ' ';
-
-// eslint-disable jsdoc/check-param-names
+var EMPTY_STRING = '';
+var slice = EMPTY_STRING.slice;
+var SPACE = ' '; // eslint-disable jsdoc/check-param-names
 // noinspection JSCommentMatchesSignature
+
 /**
  * This method pads the current string with another string (repeated, if needed)
  * so that the resulting string reaches the given length. The padding is applied
@@ -26,31 +24,35 @@ const SPACE = ' ';
  *  applied from the start.
  */
 // eslint-enable jsdoc/check-param-names
+
 export default function padStart(string, targetLength) {
-  const str = toStr(requireObjectCoercible(string));
-  const stringLength = toLength(str.length);
+  var str = toStr(requireObjectCoercible(string));
+  var stringLength = toLength(str.length);
   /* eslint-disable-next-line prefer-rest-params,no-void */
-  const fillString = arguments.length > 2 ? arguments[2] : void 0;
-  let filler = typeof fillString === 'undefined' ? EMPTY_STRING : toStr(fillString);
+
+  var fillString = arguments.length > 2 ? arguments[2] : void 0;
+  var filler = typeof fillString === 'undefined' ? EMPTY_STRING : toStr(fillString);
 
   if (filler === EMPTY_STRING) {
     filler = SPACE;
   }
 
-  const intMaxLength = toLength(targetLength);
+  var intMaxLength = toLength(targetLength);
 
   if (intMaxLength <= stringLength) {
     return str;
   }
 
-  const fillLen = intMaxLength - stringLength;
+  var fillLen = intMaxLength - stringLength;
+
   while (filler.length < fillLen) {
-    const fLen = filler.length;
-    const remainingCodeUnits = fillLen - fLen;
+    var fLen = filler.length;
+    var remainingCodeUnits = fillLen - fLen;
     filler += fLen > remainingCodeUnits ? slice.call(filler, 0, remainingCodeUnits) : filler;
   }
 
-  const truncatedStringFiller = filler.length > fillLen ? slice.call(filler, 0, fillLen) : filler;
-
+  var truncatedStringFiller = filler.length > fillLen ? slice.call(filler, 0, fillLen) : filler;
   return truncatedStringFiller + str;
 }
+
+//# sourceMappingURL=string-pad-start-x.esm.js.map
