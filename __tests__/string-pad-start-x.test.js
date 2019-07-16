@@ -13,7 +13,6 @@ describe('padStart', function() {
     }).toThrowErrorMatchingSnapshot();
 
     expect(function() {
-      /* eslint-disable-next-line no-void */
       padStart(void 0);
     }).toThrowErrorMatchingSnapshot();
 
