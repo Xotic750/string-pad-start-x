@@ -26,7 +26,7 @@ const SPACE = ' ';
  *  applied from the start.
  */
 // eslint-enable jsdoc/check-param-names
-export default function padStart(string, targetLength) {
+const padStart = function padStart(string, targetLength) {
   const str = toStr(requireObjectCoercible(string));
   const stringLength = toLength(str.length);
   /* eslint-disable-next-line prefer-rest-params,no-void */
@@ -53,4 +53,6 @@ export default function padStart(string, targetLength) {
   const truncatedStringFiller = filler.length > fillLen ? slice.call(filler, 0, fillLen) : filler;
 
   return truncatedStringFiller + str;
-}
+};
+
+export default padStart;

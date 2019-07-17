@@ -25,7 +25,7 @@ var SPACE = ' '; // eslint-disable jsdoc/check-param-names
  */
 // eslint-enable jsdoc/check-param-names
 
-export default function padStart(string, targetLength) {
+var padStart = function padStart(string, targetLength) {
   var str = toStr(requireObjectCoercible(string));
   var stringLength = toLength(str.length);
   /* eslint-disable-next-line prefer-rest-params,no-void */
@@ -53,6 +53,8 @@ export default function padStart(string, targetLength) {
 
   var truncatedStringFiller = filler.length > fillLen ? slice.call(filler, 0, fillLen) : filler;
   return truncatedStringFiller + str;
-}
+};
+
+export default padStart;
 
 //# sourceMappingURL=string-pad-start-x.esm.js.map
