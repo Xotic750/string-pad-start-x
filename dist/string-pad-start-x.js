@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-07-17T19:20:40.298Z",
+  "date": "2019-07-18T00:10:33.720Z",
   "describe": "",
   "description": "Pads a string with another string (repeated, if needed).",
   "file": "string-pad-start-x.js",
   "hash": "8405a93b8ca5a115e9e7",
   "license": "MIT",
-  "version": "2.0.5"
+  "version": "2.0.6"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
