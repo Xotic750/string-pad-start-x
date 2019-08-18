@@ -51,6 +51,7 @@
     "url": "https://github.com/Xotic750/string-pad-start-x/issues"
   },
   "dependencies": {
+    "simple-methodize-x": "^1.0.2",
     "require-object-coercible-x": "^2.1.0",
     "to-length-x": "^4.2.0",
     "to-string-x": "^2.1.0"

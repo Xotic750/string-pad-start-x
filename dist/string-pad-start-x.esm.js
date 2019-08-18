@@ -1,8 +1,9 @@
 import requireObjectCoercible from 'require-object-coercible-x';
 import toStr from 'to-string-x';
 import toLength from 'to-length-x';
+import methodize from 'simple-methodize-x';
 var EMPTY_STRING = '';
-var slice = EMPTY_STRING.slice;
+var slice = methodize(EMPTY_STRING.slice);
 var SPACE = ' '; // eslint-disable jsdoc/check-param-names
 // noinspection JSCommentMatchesSignature
 
@@ -48,10 +49,10 @@ var padStart = function padStart(string, targetLength) {
   while (filler.length < fillLen) {
     var fLen = filler.length;
     var remainingCodeUnits = fillLen - fLen;
-    filler += fLen > remainingCodeUnits ? slice.call(filler, 0, remainingCodeUnits) : filler;
+    filler += fLen > remainingCodeUnits ? slice(filler, 0, remainingCodeUnits) : filler;
   }
 
-  var truncatedStringFiller = filler.length > fillLen ? slice.call(filler, 0, fillLen) : filler;
+  var truncatedStringFiller = filler.length > fillLen ? slice(filler, 0, fillLen) : filler;
   return truncatedStringFiller + str;
 };
 

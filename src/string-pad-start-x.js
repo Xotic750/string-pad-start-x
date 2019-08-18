@@ -1,9 +1,10 @@
 import requireObjectCoercible from 'require-object-coercible-x';
 import toStr from 'to-string-x';
 import toLength from 'to-length-x';
+import methodize from 'simple-methodize-x';
 
 const EMPTY_STRING = '';
-const {slice} = EMPTY_STRING;
+const slice = methodize(EMPTY_STRING.slice);
 const SPACE = ' ';
 
 // eslint-disable jsdoc/check-param-names
@@ -47,10 +48,10 @@ const padStart = function padStart(string, targetLength) {
   while (filler.length < fillLen) {
     const fLen = filler.length;
     const remainingCodeUnits = fillLen - fLen;
-    filler += fLen > remainingCodeUnits ? slice.call(filler, 0, remainingCodeUnits) : filler;
+    filler += fLen > remainingCodeUnits ? slice(filler, 0, remainingCodeUnits) : filler;
   }
 
-  const truncatedStringFiller = filler.length > fillLen ? slice.call(filler, 0, fillLen) : filler;
+  const truncatedStringFiller = filler.length > fillLen ? slice(filler, 0, fillLen) : filler;
 
   return truncatedStringFiller + str;
 };
