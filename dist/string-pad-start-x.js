@@ -2,7 +2,7 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017",
-  "date": "2019-08-28T17:37:23.244Z",
+  "date": "2019-08-30T22:21:17.945Z",
   "describe": "",
   "description": "Pads a string with another string (repeated, if needed).",
   "file": "string-pad-start-x.js",
