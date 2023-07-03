@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`padStart should throw when target is null or undefined 1`] = `"Cannot call method on undefined"`;
-
-exports[`padStart should throw when target is null or undefined 2`] = `"Cannot call method on undefined"`;
-
-exports[`padStart should throw when target is null or undefined 3`] = `"Cannot call method on null"`;
